@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "44a4",
+      "username": "Rahul Mannam",
+      "email": "rahulmannam@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "e177",
+      "title": "bus ticket",
+      "amount": 50,
+      "date": "2025-09-08",
+      "userId": "44a4"
+    }
+  ]
+}

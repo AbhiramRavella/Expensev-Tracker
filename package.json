@@ -1,0 +1,12 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "json-server --watch backend/db.json --port 3002",
+    "client": "live-server frontend --entry-file=index.html"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "live-server": "^1.2.2"
+  }
+}

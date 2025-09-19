@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="aurora"></div>
+    <div class="aurora two"></div>
+
+    <main id="authPage">
+        <div id="login" class="auth-card">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <p>No account? <a class="toggle-link" href="#" onclick="showSignup()">Signup here</a></p>
+        </div>
+
+        <div id="signup" class="auth-card hidden">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupUsername" placeholder="Username">
+            <input type="email" id="signupEmail" placeholder="Email">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <button onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a class="toggle-link" href="#" onclick="showLogin()">Login here</a></p>
+        </div>
+    </main>
+
+    <section id="dashboard" class="hidden">
+        <header>
+            <div class="nav">
+                <span class="brand">📊 Expense Tracker</span>
+                <div class="nav-links">
+                    <button id="logoutBtn">Logout</button>
+                </div>
+            </div>
+        </header>
+        <main>
+            <h3>➕ Add Expense</h3>
+            <input type="text" id="expenseTitle" placeholder="Expense Title">
+            <input type="number" id="expenseAmount" placeholder="Amount">
+            <input type="date" id="expenseDate">
+            <button onclick="addExpense()">Add Expense</button>
+
+            <h3>📜 Expense History</h3>
+            <table>
+                <thead>
+                    <tr><th>Title</th><th>Amount</th><th>Date</th><th>Action</th></tr>
+                </thead>
+                <tbody id="expenseTable"></tbody>
+            </table>
+
+            <div id="editForm" class="auth-card hidden">
+                <h3>Edit Expense</h3>
+                <input type="text" id="editTitle" placeholder="Title">
+                <input type="number" id="editAmount" placeholder="Amount">
+                <input type="date" id="editDate">
+                <button onclick="updateExpense()">Update</button>
+                <button onclick="cancelEdit()" style="background:gray; color:white;">Cancel</button>
+            </div>
+
+            <div style="width:45%; float:left; margin-right:5%;">
+                <h3>Monthly Total</h3>
+                <canvas id="totalChart"></canvas>
+            </div>
+            <div style="width:45%; float:left;">
+                <h3>Monthly Average</h3>
+                <canvas id="avgChart"></canvas>
+            </div>
+            <div style="clear:both;"></div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
